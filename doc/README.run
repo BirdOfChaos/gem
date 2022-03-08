@@ -3,14 +3,17 @@
 
 # make sure you source the .common_setup file to set the environment
 #  variables needed to run GEM
-. ./.common_setup
+. ./.common_setup [gnu|intel]
 
 # Warning: this is a development branch:
 # some configurations may not work
 
 cd gem/work[...]
-#If running OpenMP (OMP_NUM_THREADS > 1) set OMP_STACKSIZE=4G
 #-ptopo [npx] x [npy] x [OMP_NUM_THREADS] where npx, npy is for MPI topology
+
+#test configuration
+runprep.sh -dircfg configurations/GEM_cfgs
+runmod.sh  -dircfg configurations/GEM_cfgs
 
 #GY (actually uses double cpus)- in this example: uses 16 cpus
 runprep.sh -dircfg configurations/GEM_cfgs_GY_FISL_P
