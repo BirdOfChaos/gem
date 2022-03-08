@@ -4,11 +4,6 @@
 *.swo
 gem_dbase
 gem_dbase.tar.gz
-build*
-work*
-src/gemdyn/expo
-benchmark_dbase
-benchmark-GY-15.tar.gz
-Benchmark_GY15
-README-benchmark-GY15
-configurations/GEM_cfgs_GY15
+/build*
+/work*
+

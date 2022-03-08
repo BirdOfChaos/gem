@@ -17,8 +17,8 @@ include(ec_compiler_presets)
 # CMAKE_BUILD_TYPE can be one of Debug, Release, RelWithDebInfo, MinSizeRel
 if (NOT CMAKE_BUILD_TYPE)
   message(STATUS "CMAKE_BUILD_TYPE can be one of Debug, Release, RelWithDebInfo, MinSizeRel")
-  message(STATUS "No build type selected, default to RelWithDebInfo")
-  set(CMAKE_BUILD_TYPE "RelWithDebInfo")
+  set(CMAKE_BUILD_TYPE "Release")
+  message(STATUS "No build type selected, default to ${CMAKE_BUILD_TYPE}")
 endif()
 message(STATUS "Configuring for ${CMAKE_BUILD_TYPE} build type")
 
@@ -132,7 +132,6 @@ add_custom_target(work
         $<TARGET_FILE:voir>
         ${CMAKE_INSTALL_PREFIX}/bin
     COMMAND /bin/ln -sf ${CMAKE_SOURCE_DIR}/configurations ${CMAKE_INSTALL_PREFIX}
-    COMMAND /bin/cp -avf ${CMAKE_SOURCE_DIR}/doc/README.run ${CMAKE_INSTALL_PREFIX}
 
     DEPENDS
         cclargs_lite
